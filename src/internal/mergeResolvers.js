@@ -6,6 +6,7 @@ const extend = (extendedResolver) => ({
 });
 
 const mergeResolvers = (allResolvers) => {
+  // eslint-disable-next-line prefer-const
   let [firstResolversConfig, ...rest] = allResolvers;
 
   rest.forEach((resolversConfigs) => {

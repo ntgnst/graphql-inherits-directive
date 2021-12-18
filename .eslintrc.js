@@ -8,9 +8,6 @@ module.exports = {
     'no-constant-condition': 'off',
     'no-await-in-loop': 'off',
     'template-curly-spacing': 'off',
-    'consistent-return': 'off',
-    'prefer-const': 'off',
-    'no-throw-literal': 'off',
     indent: [
       'error',
       2,

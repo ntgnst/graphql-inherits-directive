@@ -26,7 +26,7 @@ const applyInheritsDirective = ({ typeDefs, resolvers }) => {
 
             // Directive parameter if is not in types.
             if (!(inheritedType in objectTypeMap)) {
-              throw `Invalid parameter. Parameter ${inheritedType} not in type definitions.`;
+              throw new Error(`Invalid parameter. Parameter ${inheritedType} not in type definitions.`);
             }
 
             const { fieldDefs, fieldResolvers } = objectTypeMap[inheritedType];
@@ -35,6 +35,8 @@ const applyInheritsDirective = ({ typeDefs, resolvers }) => {
             return { ...node, fields: [...fieldDefs, ...node.fields] };
           }
         }
+
+        return undefined;
       },
     },
   });
