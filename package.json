@@ -1,7 +1,7 @@
 {
-  "author": "Batuhan Yahşi (ntgnst)",
-  "name": "graphql-utils",
-  "version": "0.0.0",
+  "author": "ntgnst",
+  "name": "graphql-sdl-utils",
+  "version": "0.0.2",
   "description": "Piri npm package that contains common graphql functionalities and helpers.",
   "main": "dist/graphql-utils.umd.js",
   "module": "dist/graphql-utils.esm.js",
@@ -12,11 +12,10 @@
     "build": "npm run lint:fix && npm run build:es && npm run build:umd",
     "build:es": "rollup --config build/rollup.config.es.js",
     "build:umd": "rollup --config build/rollup.config.umd.js",
-    "authorize": "vsts-npm-auth -config .npmrc",
     "clean": "rimraf es/* dist/*",
     "lint": "eslint src -c .eslintrc.js --ext js --fix",
     "lint:fix": "eslint src -c .eslintrc.js --ext js --fix",
-    "prepublishOnly": "npm run clean && npm run authorize && npm run build",
+    "prepublishOnly": "npm run clean && npm run build",
     "postpublish": "npm run clean"
   },
   "dependencies": {
@@ -50,8 +49,12 @@
     "uglify-es": "^3.3.9"
   },
   "keywords": [
-    "piri",
-    "graphql"
+    "graphql",
+    "apollo-server",
+    "sdl",
+    "extend",
+    "resolver",
+    "typeDefs"
   ],
   "license": "ISC"
 }
