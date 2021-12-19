@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/ntgnst/graphql-utils/compare/v0.0.3...v0.0.4) (2021-12-19)
+
+
+### Bug Fixes
+
+* **console:** console.log removed on create-commit-msg.js ([ce7559c](https://github.com/ntgnst/graphql-utils/commit/ce7559c6e380c70a6bc72fbd85045569d39ce6df))
+
 ### 0.0.3 (2021-12-19)
 
 

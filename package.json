@@ -1,7 +1,7 @@
 {
   "author": "ntgnst",
   "name": "graphql-sdl-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Piri npm package that contains common graphql functionalities and helpers.",
   "main": "dist/graphql-utils.umd.js",
   "module": "dist/graphql-utils.esm.js",
