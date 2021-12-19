@@ -9,16 +9,19 @@
     "dist"
   ],
   "scripts": {
+    "commit-msg:create": "node create-commit-msg.js",
+    "commitlint:config": "echo module.exports = { extends: ['@commitlint/config-conventional'] };> commitlint.config.js && npm run commit-msg:create",
+    "postinstall": "npx husky install && npm run commitlint:config",
     "build": "npm run lint:fix && npm run build:es && npm run build:umd",
     "build:es": "rollup --config build/rollup.config.es.js",
     "build:umd": "rollup --config build/rollup.config.umd.js",
     "clean": "rimraf es/* dist/*",
     "lint": "eslint src -c .eslintrc.js --ext js --fix",
     "lint:fix": "eslint src -c .eslintrc.js --ext js --fix",
-    "prepublishOnly": "npm run clean && npm run build && standard-version",
-    "release": "standard-version",
-    "test": "npm run clean && npm run build && npm run release",
-    "postpublish": "npm run clean"
+    "prepublishOnly": "npm run clean && npm run build && npm run release",
+    "postpublish": "npm run clean && npm run push:changes",
+    "push:changes": "git pull && git push",
+    "release": "standard-version"
   },
   "dependencies": {
     "@apollo/subgraph": "^0.1.5",
@@ -27,6 +30,8 @@
     "ramda": "^0.27.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.1",
@@ -43,6 +48,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-vue": "^5.2.3",
+    "husky": "^7.0.4",
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
     "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.22",
