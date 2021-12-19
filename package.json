@@ -15,7 +15,9 @@
     "clean": "rimraf es/* dist/*",
     "lint": "eslint src -c .eslintrc.js --ext js --fix",
     "lint:fix": "eslint src -c .eslintrc.js --ext js --fix",
-    "prepublishOnly": "npm run clean && npm run build",
+    "prepublishOnly": "npm run clean && npm run build && standard-version",
+    "release": "standard-version",
+    "test": "npm run clean && npm run build && npm run release",
     "postpublish": "npm run clean"
   },
   "dependencies": {
@@ -25,6 +27,12 @@
     "ramda": "^0.27.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@rollup/plugin-replace": "^3.0.0",
+    "babel-eslint": "^10.0.2",
+    "cross-env": "^7.0.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-airbnb-base": "^14.2.0",
@@ -35,12 +43,6 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-vue": "^5.2.3",
-    "babel-eslint": "^10.0.2",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.1.1",
-    "@rollup/plugin-replace": "^3.0.0",
-    "cross-env": "^7.0.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
     "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.22",
