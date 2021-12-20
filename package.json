@@ -5,7 +5,7 @@
     "url": "https://github.com/ntgnst/graphql-inherits-directive/edit/master/README.md"
   },
   "name": "graphql-inherits-directive",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Npm package that contains graphql-inherits-directive.",
   "main": "dist/graphql-inherits-directive.umd.js",
   "module": "dist/graphql-inherits-directive.esm.js",
