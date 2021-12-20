@@ -24,6 +24,7 @@
     "lint:fix": "eslint src -c .eslintrc.js --ext js --fix",
     "prepublishOnly": "npm run clean && npm run build && npm run release",
     "postpublish": "npm run clean && npm run push:changes",
+    "publish": "git push --follow-tags origin master && npm publish",
     "push:changes": "git pull && git push",
     "release": "standard-version"
   },
