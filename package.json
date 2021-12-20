@@ -1,16 +1,20 @@
 {
   "author": "ntgnst",
-  "name": "graphql-sdl-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ntgnst/graphql-inherits-directive/edit/master/README.md"
+  },
+  "name": "graphql-inherits-directive",
   "version": "0.0.4",
-  "description": "Piri npm package that contains common graphql functionalities and helpers.",
-  "main": "dist/graphql-utils.umd.js",
-  "module": "dist/graphql-utils.esm.js",
+  "description": "Npm package that contains graphql-inherits-directive.",
+  "main": "dist/graphql-inherits-directive.umd.js",
+  "module": "dist/graphql-inherits-directive.esm.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "commit-msg:create": "node create-commit-msg.js",
-    "commitlint:config": "echo module.exports = { extends: ['@commitlint/config-conventional'] };> commitlint.config.js && npm run commit-msg:create",
+    "commitlint:config": "npm run commit-msg:create",
     "postinstall": "npx husky install && npm run commitlint:config",
     "build": "npm run lint:fix && npm run build:es && npm run build:umd",
     "build:es": "rollup --config build/rollup.config.es.js",

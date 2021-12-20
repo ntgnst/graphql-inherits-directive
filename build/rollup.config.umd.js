@@ -3,9 +3,9 @@ import base from './rollup.config.base';
 const config = {
   ...base,
   output: {
-    file: 'dist/graphql-utils.umd.js',
+    file: 'dist/graphql-inherits-directive.umd.js',
     format: 'umd',
-    name: '@piri/graphql-utils',
+    name: 'graphql-inherits-directive',
     extend: true,
     globals: {
       'apollo-server': 'apollo-server',

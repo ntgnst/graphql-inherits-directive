@@ -10,10 +10,6 @@ const text = `#!/bin/sh
 const filePath = path.resolve(__dirname, './.husky/commit-msg');
 
 if (fs.existsSync(filePath)) {
-  fs.writeFile(filePath, text, 'utf8', (err) => {
-    if (err) throw err;
-  });
-} else {
   fs.writeFile(filePath, text, { flag: 'w', encoding: 'utf8' }, (err) => {
     if (err) throw err;
   });
