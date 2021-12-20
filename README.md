@@ -1,4 +1,4 @@
-# graphql-utils
+# graphql-inherits-directive
 
 ## `buildSchema([module,...,moduleN])`
 ### `Module: { typeDefs, resolvers }`
